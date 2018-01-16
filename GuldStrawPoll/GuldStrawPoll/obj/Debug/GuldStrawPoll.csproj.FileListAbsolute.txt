@@ -1,0 +1,2 @@
+c:\users\adai104\source\repos\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csprojResolveAssemblyReference.cache
+c:\users\adai104\source\repos\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csproj.CoreCompileInputs.cache
