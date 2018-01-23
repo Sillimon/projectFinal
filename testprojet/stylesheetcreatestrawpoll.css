@@ -71,17 +71,37 @@ li {
 li a {
     text-decoration: none;
     color: white;
+    
 }
 li .titre {
     color: red;
     position: absolute; /* postulat de départ */
-    left: 50%; /* à 50%/50% du parent référent */
+    left: 50%;/* à 50%/50% du parent référent */
     transform: translate(-50%); /* décalage de 50% de sa propre taille */
-    
+    font-size: 25px;
+    padding-top: 35px;    
 }
 
-logo {
-    font-size: 200px;
+li .btnConnect {
+    position: absolute;
+    padding-top: 35px;
+    right: 1%;
+    transform: translate(-1%);
+    font-size: 20px;
+}
+
+li .btnLog {
+    position: absolute;
+    padding-top: 35px;
+    right: 10%;
+    font-size: 20px;
+    transform: translate(-10%);
+    padding-top: 35px;
+}
+
+li .logo {
+    width: 40%;
+    
 }
 h1{
 	color:blue;
