@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <title>Toto</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/CSS/CreateStrawPoll.css" />
+</head>
+<body>
+    <div>
+        <!--Navbar du haut-->
+        <ul>
+            <li><a href="#news" class="titre">Guld StrawPoll</a></li>
+            <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
+            <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
+        </ul>
+
+        <!-- Texte du milieu-->
+        <div class="txtMid">
+            <form method="post" action="/Home/CreateStrawPoll">
+                <p>
+                    <!--Question + 4 réponses-->
+                    <label for="question">Ecrivez votre question ici :</label>
+                    <input type="text" name="question" class="question" />
+                    <br />
+                    <label for="1Reponse">Veuillez inscrire votre première réponse ici :</label>
+                    <input type="text" name="answerOne" class="reponse" />
+                    <br />
+                    <label for="2Reponse">Veuillez inscrire votre deuxième réponse ici :</label>
+                    <input type="text" name="answerTwo" class="reponse" />
+                    <br />
+                    <label for="3Reponse">Veuillez inscrire votre troisième réponse ici :</label>
+                    <input type="text" name="answerThree" class="reponse" />
+                    <br />
+                    <label for="4Reponse">Veuillez inscrire votre quatrième réponse ici :</label>
+                    <input type="text" name="answerFour" class="reponse" />
+                    <br />
+                    <!-- Choix d'un QCM ou de l'autre-->
+                    Veuillez sélectionner le type de réponse attendu (QCM ou Choix unique) :<br />
+                    <input type="radio" name="questionChoice" value="choixUnique" id="choixUnique" /><label for="choixUnique">Questionnaire a choix unique</label>
+                    <input type="radio" name="questionChoice" value="QCM" id="QCM" /><label for="QCM">Questionnaire a choix multiples</label>
+                    <br /><br /><br />
+                    <!--Bouton création du StrawPoll-->
+                    <input type="submit" value="Create StrawPoll" id="btncreatepoll"/>
+                </p>
+            </form>
+        </div>
+
+
+        <!-- Copyright-->
+        <p id="copyright">Copyright 2017. Tous droits réservés</p>
+
+    </div>
+</body>
+</html>

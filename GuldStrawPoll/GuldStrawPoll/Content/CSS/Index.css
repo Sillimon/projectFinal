@@ -1,0 +1,33 @@
+﻿ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    position: center;
+    text-align: right;
+}
+
+li {
+    display: inline-block;
+}
+
+#guldStrawPoll {
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+    position: center;
+    text-align: center;
+    vertical-align: central;
+
+    padding-right: 500px;
+}
+
+li button {
+
+    background-color: lightgrey;
+    border: thin;
+    color: black;
+    font-size: medium;
+
+    margin-right: 20px;
+}

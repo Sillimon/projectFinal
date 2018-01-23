@@ -9,18 +9,14 @@ namespace GuldStrawPoll.Models
 {
     public class ConnectionQuery
     {
-        String connectionString = "";
-        SqlConnection connection;
+        SqlConnection connection = new SqlConnection("Data Source=POLE414-T;Initial Catalog=GuldStrawPoll;Integrated Security=True");
+        SqlCommand cmd;
 
-        public ConnectionQuery(String strConnection)
-        {
-            connectionString = strConnection;
-        }
+        public ConnectionQuery(){}
 
         //Open the connection
         public void OpenConnection()
         {
-            connection = new SqlConnection(connectionString);
             connection.Open();
         }
 
@@ -31,28 +27,22 @@ namespace GuldStrawPoll.Models
         }
 
         //Performs insert, delete and update
-        public void ExecuteQueries(String query)
+        public void ExecuteNonQuery()
         {
-            SqlCommand cmd = new SqlCommand(query, connection);
             cmd.ExecuteNonQuery();
         }
 
         //Show data in a TextBox/Label
-        public SqlDataReader DataReader(String query)
+        public SqlDataReader DataReader()
         {
-            SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
-
-        //Show data in a DataGridView
-        public object ShowDataInGridView(String query)
+        
+        //GET & SET
+        public void setMySqlCommand(SqlCommand newCommand)
         {
-            SqlDataAdapter da = new SqlDataAdapter(query, connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            object dataum = ds.Tables[0];
-            return dataum;
+            cmd = newCommand;
         }
 
     }

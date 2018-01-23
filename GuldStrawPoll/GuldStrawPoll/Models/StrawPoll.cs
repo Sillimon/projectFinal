@@ -14,12 +14,20 @@ namespace GuldStrawPoll.Models
         private String URLSuppression;
         private String URLResults;
 
-        public StrawPoll(bool newMultipleChoices, String newStrawPollQuestion, int newNbrVotes)
+        public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes)
         {
             multipleChoices = newMultipleChoices;
             strawPollQuestion = newStrawPollQuestion;
             nbrVotesStrawPoll = newNbrVotes;
         }
+
+        //METHODS//
+        public String generateURLStrawPoll()
+        {
+
+            return "";
+        }
+
 
         //GET & SET//
         public bool getMultipleChoices()

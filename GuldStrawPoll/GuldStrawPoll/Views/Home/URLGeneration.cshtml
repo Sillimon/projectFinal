@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/CSS/Index.css" />
+</head>
+<body>
+    <div>
+        <!--Navbar du haut-->
+        <div>
+            <p id="guldStrawPoll" href="#createStrawPoll">Guld StrawPoll</p>
+
+            <button id="btSignIn" type="button">Sign In</button>
+            <button id="btSignUp" type="button">Sign Up</button>
+        </div>
+
+        <!-- Texte du milieu-->
+        <p> Bienvenue sur le GuldStrawPoll </p>
+        <p>Veuillez cliquer sur le bouton ci-dessous pour commencer le sondage</p>
+        <a button="btnStart">Commencons !</a>
+        Hello <span style="color:red">@ViewData["Nom"]</span>
+
+        <form method="post" action="Home/displayCreateStrawPoll">
+            <input type="submit" value="Begin" id="btnBegin" />
+        </form>
+
+        <!--Cookies-->
+        <!-- A chercher comment gérer les cookies-->
+        <!-- Copyright-->
+        <p>Copyright 2017. Tous droits réservés</p>
+
+    </div>
+</body>
+</html>
