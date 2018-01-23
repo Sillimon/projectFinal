@@ -10,7 +10,6 @@
      <div>
         <!--Navbar du haut-->
         <ul>
-            <li style="float: left"><a href="cropped-logo.png" class="logo"></a></li>
             <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li>
             <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
             <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
@@ -18,15 +17,19 @@
 
         <!-- Texte du milieu-->
         <div class="txtMid">
-         <p> Bienvenue sur le GuldStrawPoll </p>
-            <p>Veuillez cliquer sur le bouton ci-dessous pour commencer le sondage</p> 
-            <a button="btnStart">Commencons !</a> 
-            <!--Cookies-->
-            <!-- A chercher comment gérer les cookies--> 
-            
-            <!-- Copyright--> 
-            <p>Copyright 2017. Tous droits réservés</p>
-            
+             <div id="ChoixReponse">
+            <h1>Est ce que cette maquette vous convient ?</h1>
+            <h4>Description du du sondage (facultatif)</h4>
+           
+            <input class="checkboxGauche" type="checkbox" name="ChoixReponse">réponse 1
+            <br/>
+                <input type="checkbox" name="ChoixReponse" >réponse 2
+                <br/> 
+                <input type="checkbox" name="ChoixReponse">réponse 3
+                <br/> 
+                 <div id="NombreVote">Nombre de votant: 4</div>
+                <input type="submit" name="ChoixReponse" value="Votez !">
+            </div>
         </div>
         
         
