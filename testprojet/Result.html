@@ -1,9 +1,34 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="viewport" content="width=device-width" />
+<meta charset="utf-8">
+<title>Toto</title>
+<link rel="stylesheet" type="text/css" href="stylesheetcreatestrawpoll.css"/>
+</head>
+<body>
+    <div>
+    <!--Navbar du haut-->
+        <ul>
+            <li style="float: left"><img src="cropped-logo.png" class="logo"></li>
+            <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li>
+            <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
+            <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
+        </ul>
+    <!-- Gérer les charts -->
+        <div class="txtMid">
+        <div id="chartContainer" style="height: 300px; width: 100%"></div>
+
+    <!-- Copyright-->
+        <p id="copyright">Copyright 2018. Tous droits réservés</p>
+        </div>
+    </div>
+</body>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script>
 window.onload = function() {
-
+var elmt = document.getElementById("chartContainer");
+    elmt.style.backgroundColor = "#ff0";
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title: {
@@ -26,21 +51,4 @@ chart.render();
 
 }
 </script>
-</head>
-<body>
-    <!--Navbar du haut-->
-        <ul>
-            <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li>
-            <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
-            <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
-        </ul>
-    <!-- Gérer les charts -->
-        <div class="txtMid">
-            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    
-    <!-- Copyright-->
-        <p id="copyright">Copyright 2017. Tous droits réservés</p>
-        </div>
-</body>
 </html>
