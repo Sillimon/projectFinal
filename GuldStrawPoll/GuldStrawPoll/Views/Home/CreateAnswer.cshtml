@@ -4,11 +4,11 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8">
+    <title>Toto</title>
     <link rel="stylesheet" type="text/css" href="~/Content/CSS/Index.css" />
 </head>
 <body>
@@ -22,19 +22,21 @@
         </ul>
 
         <!-- Texte du milieu-->
-        <p> Bienvenue sur le GuldStrawPoll </p>
-        <p>Veuillez cliquer sur le bouton ci-dessous pour commencer le sondage</p>
-        <a button="btnStart">Commencons !</a>
-        Hello <span style="color:red">@ViewData["Nom"]</span>
+        <div class="txtMid">
+            <h1>Résultat du sondage</h1>
+            <h3>Aimez-vous la nouvelle interface</h3>
+            <h3>OUI</h3>
+            <br />
+            <h3>NON</h3>
+            <br />
+            <h3>4 Votes total</h3>
+            <br />
 
-        <form method="post" action="Home/displayCreateStrawPoll">
-            <input type="submit" value="Begin" id="btnBegin" />
-        </form>
+        </div>
 
-        <!--Cookies-->
-        <!-- A chercher comment gérer les cookies-->
+
         <!-- Copyright-->
-        <p>Copyright 2017. Tous droits réservés</p>
+        <p id="copyright">Copyright 2017. Tous droits réservés</p>
 
     </div>
 </body>

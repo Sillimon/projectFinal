@@ -14,28 +14,30 @@
 <body>
     <div>
         <!--Navbar du haut-->
-        <div>
-            <p id="guldStrawPoll" href="#createStrawPoll">Guld StrawPoll</p>
-
-            <button id="btSignIn" type="button">Sign In</button>
-            <button id="btSignUp" type="button">Sign Up</button>
-        </div>
+        <ul>
+            <li style="float: left"><img src="~\GuldStrawPoll\cropped-logo.png" class="logo"></li>
+            <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li>
+            <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
+            <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
+        </ul>
 
         <!-- Texte du milieu-->
-        <p> Bienvenue sur le GuldStrawPoll </p>
-        <p>Veuillez cliquer sur le bouton ci-dessous pour commencer le sondage</p>
-        <a button="btnStart">Commencons !</a>
-        Hello <span style="color:red">@ViewData["Nom"]</span>
+        <div class="txtMid">
+            <p> Bienvenue sur le GuldStrawPoll </p>
+            <p>Veuillez cliquer sur le bouton ci-dessous pour commencer le sondage</p>
+            <a button="btnStart">Commencons !</a>
+            Hello <span style="color:red">@ViewData["Nom"]</span>
 
-        <form method="post" action="Home/displayCreateStrawPoll">
-              <input type="submit" value="Begin" id="btnBegin" />
-        </form>
+            <form method="post" action="Home/displayCreateStrawPoll">
+                <input type="submit" value="Begin" id="btnBegin" />
+            </form>
 
-        <!--Cookies-->
-        <!-- A chercher comment gérer les cookies-->
-        <!-- Copyright-->
-        <p>Copyright 2017. Tous droits réservés</p>
+            <!--Cookies-->
+            <!-- A chercher comment gérer les cookies-->
+            <!-- Copyright-->
+            <p>Copyright 2017. Tous droits réservés</p>
 
-    </div>
+        </div>
+       </div>
 </body>
 </html>
