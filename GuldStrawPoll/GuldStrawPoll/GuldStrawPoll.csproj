@@ -128,7 +128,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\CreateStrawPoll.cshtml" />
     <Content Include="Views\Home\URLGeneration.cshtml" />
-    <Content Include="Views\Home\CreateAnswer.cshtml" />
+    <Content Include="Views\Home\VotePage.cshtml" />
     <Content Include="Views\Home\Result.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

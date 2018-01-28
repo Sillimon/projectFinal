@@ -11,8 +11,10 @@ namespace GuldStrawPoll.Models
         private String strawPollQuestion;
         private int nbrVotesStrawPoll;
         private String URLStrawPoll;
-        private String URLSuppression;
+        private String URLDeletion;
         private String URLResults;
+
+        public StrawPoll(){}
 
         public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes)
         {
@@ -21,13 +23,31 @@ namespace GuldStrawPoll.Models
             nbrVotesStrawPoll = newNbrVotes;
         }
 
-        //METHODS//
-        public String generateURLStrawPoll()
+        public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes, String newURLStrawPoll, String newURLDeletion, String newURLResults)
         {
-
-            return "";
+            multipleChoices = newMultipleChoices;
+            strawPollQuestion = newStrawPollQuestion;
+            nbrVotesStrawPoll = newNbrVotes;
+            URLStrawPoll = newURLStrawPoll;
+            URLDeletion = newURLDeletion;
+            URLResults = newURLResults;
         }
 
+        //METHODS//
+        public String generateURLStrawPoll(int ID)
+        {
+            return "Home/VotePage?ID=" + ID;
+        }
+
+        public String generateURLDeletion(int ID)
+        {
+            return "Home/DeletionPage?ID=" + ID;
+        }
+
+        public String generateURLResults(int ID)
+        {
+            return "Home/ResultsPage?ID=" + ID;
+        }
 
         //GET & SET//
         public bool getMultipleChoices()
@@ -78,15 +98,15 @@ namespace GuldStrawPoll.Models
 
 
 
-        public String getURLSuppression()
+        public String getURLDeletion()
         {
-            return URLSuppression;
+            return URLDeletion;
         }
 
 
-        public void setURLSuppression(String newURLSuppression)
+        public void setURLDeletion(String newURLDeletion)
         {
-            URLSuppression = newURLSuppression;
+            URLDeletion = newURLDeletion;
         }
 
 

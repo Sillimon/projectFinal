@@ -10,6 +10,8 @@ namespace GuldStrawPoll.Models
         private String answer;
         private int nbrVotesByAnswer;
 
+        public Answer(){}
+
         public Answer(String newAnswer, int newNbrVotes)
         {
             answer = newAnswer;

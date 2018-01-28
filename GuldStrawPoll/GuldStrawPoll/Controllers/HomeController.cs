@@ -19,16 +19,25 @@ namespace GuldStrawPoll.Controllers
         }
 
         //Display Create Page
-        public ActionResult displayCreateStrawPoll()
+        public ActionResult displayCreatePage()
         {
             return View("CreateStrawPoll");
         }
 
         //CreateStrawPoll
-        public ActionResult CreateStrawPoll(String question, String answerOne, String answerTwo, String answerThree, String answerFour, bool questionChoice)
+        public ActionResult CreateStrawPoll(String question, String answerOne, String answerTwo, String answerThree, String answerFour, String questionChoice)
         {
+            bool multipleChoices;
+            if(questionChoice == "uniqueCHoice")
+            {
+                multipleChoices = false;
+            }
+            else
+            {
+                multipleChoices = true;
+            }
             //Create question
-            Models.StrawPoll myStrawPoll = new Models.StrawPoll(question, questionChoice, 0);
+            Models.StrawPoll myStrawPoll = new Models.StrawPoll(question, multipleChoices, 0);
 
             //Create answers
             Models.Answer myAnswerOne = new Models.Answer(answerOne, 0);
@@ -36,36 +45,115 @@ namespace GuldStrawPoll.Controllers
             Models.Answer myAnswerThree = new Models.Answer(answerThree, 0);
             Models.Answer myAnswerFour = new Models.Answer(answerFour, 0);
 
-            //Connection BDD
-            Console.WriteLine("test OK");
+            //Send StrawPoll in database
+            int IDStrawPoll = addStrawPollInDataBase(myStrawPoll);
 
-            //TODO: send BDD (link btw question and answers ?? --> TODO)
+            //Send URL in database
+            sendURLsInDataBase(myStrawPoll, IDStrawPoll);
 
-            //TODO : return URL page (??)
+            //Send Answers in database and assign them to the corresponding strawpoll
+            sendAnswerInDatabase(myAnswerOne, IDStrawPoll);
+            sendAnswerInDatabase(myAnswerTwo, IDStrawPoll);
+            sendAnswerInDatabase(myAnswerThree, IDStrawPoll);
+            sendAnswerInDatabase(myAnswerFour, IDStrawPoll);
+
+            //return URL page
             return View("URLGeneration");
         }
 
+        public ActionResult VotePage(int ID)//parameters inside function --> ?ID=5
+        {
+            //get corresponding strawpoll and answers in database and create object
+            Models.StrawPoll myStrawPoll = new Models.StrawPoll();
+            Models.Answer myAnswerOne = new Models.Answer();
+            Models.Answer myAnswerTwo = new Models.Answer();
+            Models.Answer myAnswerThree = new Models.Answer();
+            Models.Answer myAnswerFour = new Models.Answer();
+
+            //TODO - Get Values in Database and set objects below's attributes
+
+            //SEND TO THE VIEW
+            ViewBag.StrawPoll = myStrawPoll;
+            ViewBag.answerOne = myAnswerOne;
+            ViewBag.answerTwo = myAnswerTwo;
+            ViewBag.answerThree = myAnswerThree;
+            ViewBag.answerFour = myAnswerFour;
+
+            return View();
+        }
+
         //METHODS//
-        public void addStrawPollInDataBase(StrawPoll newStrawPoll)
+        public int addStrawPollInDataBase(Models.StrawPoll newStrawPoll)
         {
             String queryAddStrawPoll;
             ConnectionQuery newDataBaseTask = new ConnectionQuery();
 
-            //TODO - ADD URLs String before returning String
-
-            queryAddStrawPoll = "INSERT INTO Sondage(ChoixMultiple, QuestionSondage, " +
-                "NbrVotantsSondage, URLSondage, URLSuppressionSondage, URLResultatSondage) " +
-                "VALUES(@ChoixMultiple, @QuestionSondage, @NbrVotantsSondage, @URLSondage" +
-                "@URLSuppressionSondage, @URLResultatSondage)";
+            //Changer les noms
+            queryAddStrawPoll = "INSERT INTO StrawPoll(multipleChoices, strawPollQuestion, NbrVotesStrawPoll,) " +
+                "VALUES(@multipleChoices, @strawPollQuestion, @NbrVotesStrawPoll); " +
+                "SELECT scope_identity()";
 
             newDataBaseTask.OpenConnection();
+
             SqlCommand cmd = new SqlCommand(queryAddStrawPoll);
-            cmd.Parameters.AddWithValue("@ChoixMultiple", newStrawPoll.getMultipleChoices());
-            cmd.Parameters.AddWithValue("@QuestionSondage", newStrawPoll.getStrawPollQuestion());
-            cmd.Parameters.AddWithValue("@NbrVotantsSondage", newStrawPoll.getNbrVotesStrawPoll());
-            cmd.Parameters.AddWithValue("@URLSondage", newStrawPoll.getURLStrawPoll());
-            cmd.Parameters.AddWithValue("@URLSuppressionSondage", newStrawPoll.getURLSuppression());
-            cmd.Parameters.AddWithValue("@URLResultatSondage", newStrawPoll.getURLResults());
+            cmd.Parameters.AddWithValue("@multipleChoices", newStrawPoll.getMultipleChoices());
+            cmd.Parameters.AddWithValue("@strawPollQuestion", newStrawPoll.getStrawPollQuestion());
+            cmd.Parameters.AddWithValue("@NbrVotesStrawPoll", newStrawPoll.getNbrVotesStrawPoll());
+
+            int ID = (int)cmd.ExecuteNonQuery();
+
+            newDataBaseTask.CloseConnection();
+
+            return ID;
+        }
+
+        public void sendURLsInDataBase(Models.StrawPoll lastStrawPoll, int ID)
+        {
+            String queryAddURLs;
+            ConnectionQuery newDataBaseTask = new ConnectionQuery();
+
+            String URLStrawPoll = lastStrawPoll.generateURLStrawPoll(ID);
+            lastStrawPoll.setURLStrawPoll(URLStrawPoll);
+
+            String URLDeletion = lastStrawPoll.generateURLDeletion(ID);
+            lastStrawPoll.setURLDeletion(URLDeletion);
+
+            String URLResult = lastStrawPoll.generateURLResults(ID);
+            lastStrawPoll.setURLResults(URLResult);
+
+            //Changer les noms
+            queryAddURLs = "UPDATE StrawPoll " +
+                "SET URLStrawPoll = @URLStrawPoll, URLDeletion = @URLDeletion, URLResult = @URLResult)" +
+                "WHERE NumStrawPoll=@ID";
+
+            newDataBaseTask.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand(queryAddURLs);
+            cmd.Parameters.AddWithValue("@URLStrawPoll", URLStrawPoll);
+            cmd.Parameters.AddWithValue("@URLDeletion", URLDeletion);
+            cmd.Parameters.AddWithValue("@URLResult", URLResult);
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+            newDataBaseTask.setMySqlCommand(cmd);
+            newDataBaseTask.ExecuteNonQuery();
+            newDataBaseTask.CloseConnection();
+        }
+
+        public void sendAnswerInDatabase(Models.Answer newAnswer, int ID)
+        {
+            String queryAddAnswer;
+            ConnectionQuery newDataBaseTask = new ConnectionQuery();
+
+            //Changer les noms
+            queryAddAnswer = "INSERT INTO Answer(answer, nbrVotes, NumStrawPoll,) " +
+                "VALUES(@answer, @nbrVotes, @NumStrawPoll)";
+
+            newDataBaseTask.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand(queryAddAnswer);
+            cmd.Parameters.AddWithValue("@answer", newAnswer.getAnswer());
+            cmd.Parameters.AddWithValue("@nbrVotes", newAnswer.getNbrVotesByAnswer());
+            cmd.Parameters.AddWithValue("@NumStrawPoll", ID);
 
             newDataBaseTask.setMySqlCommand(cmd);
             newDataBaseTask.ExecuteNonQuery();
