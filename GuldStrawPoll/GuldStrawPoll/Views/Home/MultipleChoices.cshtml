@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <title>Toto</title>
+    <link rel="stylesheet" type="text/css" href="stylesheetcreatestrawpoll.css" />
+</head>
+<body>
+    <div>
+        <!-- Navbar --> 
+        <ul> 
+            <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li> 
+            <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li> 
+            <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li> 
+        </ul>
+
+        <!-- Middle Text --> 
+        <div class="txtMid">
+            <form action="/Home/Vote" method="post">
+                <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
+
+                <input type="checkbox" name="Answer1" value="answerOne">@ViewBag.answerOne.getAnswer()<br>
+                <input type="checkbox" name="Answer2" value="answerTwo">@ViewBag.answerTwo.getAnswer()<br>
+                <input type="checkbox" name="Answer3" value="answerThree">@ViewBag.answerThree.getAnswer()<br>
+                <input type="checkbox" name="Answer4" value="answerFour">@ViewBag.answerFour.getAnswer()<br> <br>
+
+                <input type="submit" name="BtVote" value="Vote !">
+
+            </form>
+            <div class="NbrVote">Total votes : @ViewBag.StrawPoll.getNbrVotesStrawPoll()</div>
+        </div>
+
+        <!-- Copyright--> 
+        <p id="copyright">Copyright 2018. All rights reserved</p>
+    </div>
+</body>
+</html>
