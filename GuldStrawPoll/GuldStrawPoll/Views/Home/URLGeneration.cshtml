@@ -15,21 +15,18 @@
     <div>
         <!--Navbar du haut-->
         <ul>
-        <li style="float: left"><img src="~\GuldStrawPoll\cropped-logo.png" class="logo"></li>
-        <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li>
-        <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
-        <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
+            <li style="float: left"><img src="~\GuldStrawPoll\cropped-logo.png" class="logo"></li>
+            <li style="float:center"><a href="#news" class="titre">Guld StrawPoll</a></li>
+            <li style="float:right"><a href="#contact" class="btnConnect">Connect</a></li>
+            <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
         </ul>
 
         <!-- Texte du milieu-->
         <p> Bienvenue sur le GuldStrawPoll </p>
-        <p>Veuillez cliquer sur le bouton ci-dessous pour commencer le sondage</p>
-        <a button="btnStart">Commencons !</a>
-        Hello <span style="color:red">@ViewData["Nom"]</span>
+        <a style="float:left" href="@ViewBag.URLStrawPoll">Vote page</a><br /><br />
+        <a style="float:left" href="@ViewBag.URLDeletion">Delete strawpoll</a><br /><br />
+        <a style="float:left" href="@ViewBag.URLResult">Result Page</a><br /><br />
 
-        <form method="post" action="Home/displayCreateStrawPoll">
-            <input type="submit" value="Begin" id="btnBegin" />
-        </form>
 
         <!--Cookies-->
         <!-- A chercher comment gérer les cookies-->

@@ -36,17 +36,17 @@ namespace GuldStrawPoll.Models
         //METHODS//
         public String generateURLStrawPoll(int ID)
         {
-            return "Home/VotePage?ID=" + ID;
+            return "/Home/VotePage?ID=" + ID.ToString();
         }
 
         public String generateURLDeletion(int ID)
         {
-            return "Home/DeletionPage?ID=" + ID;
+            return "/Home/DeletionPage?ID=" + ID.ToString();
         }
 
         public String generateURLResults(int ID)
         {
-            return "Home/ResultsPage?ID=" + ID;
+            return "/Home/ResultsPage?ID=" + ID.ToString();
         }
 
         //GET & SET//

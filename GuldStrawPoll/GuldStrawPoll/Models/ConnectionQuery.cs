@@ -29,7 +29,7 @@ namespace GuldStrawPoll.Models
         //Performs insert, delete and update
         public void ExecuteNonQuery()
         {
-            cmd.ExecuteNonQuery();
+            this.cmd.ExecuteNonQuery();
         }
 
         //Show data in a TextBox/Label
@@ -42,7 +42,7 @@ namespace GuldStrawPoll.Models
         //GET & SET
         public void setMySqlCommand(SqlCommand newCommand)
         {
-            cmd = newCommand;
+            this.cmd = newCommand;
         }
 
 

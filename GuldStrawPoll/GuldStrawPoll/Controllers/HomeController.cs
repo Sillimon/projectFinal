@@ -29,7 +29,7 @@ namespace GuldStrawPoll.Controllers
         public ActionResult CreateStrawPoll(String question, String answerOne, String answerTwo, String answerThree, String answerFour, String questionChoice)
         {
             bool multipleChoices;
-            if(questionChoice == "uniqueCHoice")
+            if(questionChoice == "uniqueChoice")
             {
                 multipleChoices = false;
             }
@@ -58,21 +58,72 @@ namespace GuldStrawPoll.Controllers
             sendAnswerInDatabase(myAnswerThree, IDStrawPoll);
             sendAnswerInDatabase(myAnswerFour, IDStrawPoll);
 
+            ViewBag.URLStrawPoll = myStrawPoll.getURLStrawPoll();
+            ViewBag.URLDeletion = myStrawPoll.getURLDeletion();
+            ViewBag.URLResult = myStrawPoll.getURLResults();
+
             //return URL page
             return View("URLGeneration");
         }
 
-        public ActionResult VotePage(int ID)//parameters inside http --> ?ID=5
+        public ActionResult VotePage(int ID)
         {
-            //get corresponding strawpoll and answers in database and create object
             Models.StrawPoll myStrawPoll = new Models.StrawPoll();
             Models.Answer myAnswerOne = new Models.Answer();
             Models.Answer myAnswerTwo = new Models.Answer();
             Models.Answer myAnswerThree = new Models.Answer();
             Models.Answer myAnswerFour = new Models.Answer();
 
-            //TODO - Get Values in Database and set objects below's attributes
-            myStrawPoll.setStrawPollQuestion("EGZKSJLBNRGSFJ GULDI");
+            //Get strawpoll in database
+            String queryGetStrawPoll;
+            ConnectionQuery newDataBaseTask = new ConnectionQuery();
+
+            queryGetStrawPoll = "SELECT * FROM StrawPoll WHERE NumStrawPoll = @ID;";
+
+            newDataBaseTask.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand(queryGetStrawPoll, newDataBaseTask.getSqlConnection());
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+            SqlDataReader newReader = cmd.ExecuteReader();
+            while (newReader.Read())
+            {
+                myStrawPoll.setStrawPollQuestion((String)newReader["Question"]);
+                myStrawPoll.setMultipleChoices((bool)newReader["MultipleChoices"]);
+                myStrawPoll.setNbrVotesStrawPoll((int)newReader["NbrVotes"]);
+                myStrawPoll.setURLStrawPoll((String)newReader["URLStrawPoll"]);
+                myStrawPoll.setURLDeletion((String)newReader["URLDeletion"]);
+                myStrawPoll.setURLResults((String)newReader["URLResult"]);
+            }
+
+            newReader.Close();
+
+            String queryGetAnswers = "SELECT * FROM Answer WHERE NumStrawPoll = @ID;";
+            SqlCommand cmdAnswer = new SqlCommand(queryGetAnswers, newDataBaseTask.getSqlConnection());
+            cmdAnswer.Parameters.AddWithValue("@ID", ID);
+
+            SqlDataReader newReaderAnswer = cmdAnswer.ExecuteReader();
+
+            List<Models.Answer> answers = new List<Models.Answer>();
+
+            while (newReaderAnswer.HasRows)
+            {
+
+                while (newReaderAnswer.Read())
+                {
+                    Models.Answer newAnswer = new Models.Answer((String)newReaderAnswer["Answer"], (int)newReaderAnswer["NbrVotes"]);
+                    answers.Add(newAnswer);
+                }
+                newReaderAnswer.NextResult();
+            }
+
+            newReaderAnswer.Close();
+            newDataBaseTask.CloseConnection();
+
+            myAnswerOne = answers.ElementAt(0);
+            myAnswerTwo = answers.ElementAt(1);
+            myAnswerThree = answers.ElementAt(2);
+            myAnswerFour = answers.ElementAt(3);
 
             //SEND TO THE VIEW
             ViewBag.StrawPoll = myStrawPoll;
@@ -81,7 +132,14 @@ namespace GuldStrawPoll.Controllers
             ViewBag.answerThree = myAnswerThree;
             ViewBag.answerFour = myAnswerFour;
 
-            return View();
+            if(myStrawPoll.getMultipleChoices() == false)
+            {
+                return View("UniqueChoice");
+            }
+            else
+            {
+                return View("MultipleChoices");
+            }
         }
 
         //METHODS//
@@ -91,18 +149,28 @@ namespace GuldStrawPoll.Controllers
             ConnectionQuery newDataBaseTask = new ConnectionQuery();
 
             //Changer les noms
-            queryAddStrawPoll = "INSERT INTO StrawPoll(MultipleChoices, Question, NbrVotes) " +
-                "VALUES(@multipleChoices, @strawPollQuestion, @NbrVotesStrawPoll); " +
+            queryAddStrawPoll = "INSERT INTO StrawPoll(MultipleChoices, Question, NbrVotes, NumCreator) " +
+                "VALUES(@MultipleChoices, @StrawPollQuestion, @NbrVotesStrawPoll, @NumCreator); " +
                 "SELECT scope_identity()";
 
             newDataBaseTask.OpenConnection();
 
             SqlCommand cmd = new SqlCommand(queryAddStrawPoll, newDataBaseTask.getSqlConnection());
-            cmd.Parameters.AddWithValue("@multipleChoices", newStrawPoll.getMultipleChoices());
-            cmd.Parameters.AddWithValue("@strawPollQuestion", newStrawPoll.getStrawPollQuestion());
+            cmd.Parameters.AddWithValue("@MultipleChoices", newStrawPoll.getMultipleChoices());
+            cmd.Parameters.AddWithValue("@StrawPollQuestion", newStrawPoll.getStrawPollQuestion());
             cmd.Parameters.AddWithValue("@NbrVotesStrawPoll", newStrawPoll.getNbrVotesStrawPoll());
 
-            int ID = (int)cmd.ExecuteNonQuery();
+            bool connected = false;
+            if(!connected)
+            {
+                cmd.Parameters.AddWithValue("@NumCreator", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@NumCreator", 4);
+            }
+
+            int ID = Convert.ToInt32(cmd.ExecuteScalar());
 
             newDataBaseTask.CloseConnection();
 
@@ -125,12 +193,12 @@ namespace GuldStrawPoll.Controllers
 
             //Changer les noms
             queryAddURLs = "UPDATE StrawPoll " +
-                "SET URLStrawPoll = @URLStrawPoll, URLDeletion = @URLDeletion, URLResult = @URLResult)" +
+                "SET URLStrawPoll = @URLStrawPoll, URLDeletion = @URLDeletion, URLResult = @URLResult " +
                 "WHERE NumStrawPoll=@ID";
 
             newDataBaseTask.OpenConnection();
 
-            SqlCommand cmd = new SqlCommand(queryAddURLs);
+            SqlCommand cmd = new SqlCommand(queryAddURLs, newDataBaseTask.getSqlConnection());
             cmd.Parameters.AddWithValue("@URLStrawPoll", URLStrawPoll);
             cmd.Parameters.AddWithValue("@URLDeletion", URLDeletion);
             cmd.Parameters.AddWithValue("@URLResult", URLResult);
@@ -147,14 +215,14 @@ namespace GuldStrawPoll.Controllers
             ConnectionQuery newDataBaseTask = new ConnectionQuery();
 
             //Changer les noms
-            queryAddAnswer = "INSERT INTO Answer(answer, nbrVotes, NumStrawPoll,) " +
-                "VALUES(@answer, @nbrVotes, @NumStrawPoll)";
+            queryAddAnswer = "INSERT INTO Answer(Answer, NbrVotes, NumStrawPoll) " +
+                "VALUES(@Answer, @NbrVotes, @NumStrawPoll)";
 
             newDataBaseTask.OpenConnection();
 
-            SqlCommand cmd = new SqlCommand(queryAddAnswer);
-            cmd.Parameters.AddWithValue("@answer", newAnswer.getAnswer());
-            cmd.Parameters.AddWithValue("@nbrVotes", newAnswer.getNbrVotesByAnswer());
+            SqlCommand cmd = new SqlCommand(queryAddAnswer, newDataBaseTask.getSqlConnection());
+            cmd.Parameters.AddWithValue("@Answer", newAnswer.getAnswer());
+            cmd.Parameters.AddWithValue("@NbrVotes", newAnswer.getNbrVotesByAnswer());
             cmd.Parameters.AddWithValue("@NumStrawPoll", ID);
 
             newDataBaseTask.setMySqlCommand(cmd);

@@ -128,8 +128,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\CreateStrawPoll.cshtml" />
     <Content Include="Views\Home\URLGeneration.cshtml" />
-    <Content Include="Views\Home\VotePage.cshtml" />
+    <Content Include="Views\Home\UniqueChoice.cshtml" />
     <Content Include="Views\Home\Result.cshtml" />
+    <Content Include="Views\Home\MultipleChoices.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
