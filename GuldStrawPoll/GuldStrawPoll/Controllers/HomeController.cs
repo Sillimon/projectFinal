@@ -15,6 +15,7 @@ namespace GuldStrawPoll.Controllers
         // Display welcome page
         public ActionResult Index()
         {
+            ViewBag.Nom = "Mon p'tit Guld !";
                 return View("Index");
         }
 
@@ -61,7 +62,7 @@ namespace GuldStrawPoll.Controllers
             return View("URLGeneration");
         }
 
-        public ActionResult VotePage(int ID)//parameters inside function --> ?ID=5
+        public ActionResult VotePage(int ID)//parameters inside http --> ?ID=5
         {
             //get corresponding strawpoll and answers in database and create object
             Models.StrawPoll myStrawPoll = new Models.StrawPoll();
@@ -71,6 +72,7 @@ namespace GuldStrawPoll.Controllers
             Models.Answer myAnswerFour = new Models.Answer();
 
             //TODO - Get Values in Database and set objects below's attributes
+            myStrawPoll.setStrawPollQuestion("EGZKSJLBNRGSFJ GULDI");
 
             //SEND TO THE VIEW
             ViewBag.StrawPoll = myStrawPoll;
@@ -89,13 +91,13 @@ namespace GuldStrawPoll.Controllers
             ConnectionQuery newDataBaseTask = new ConnectionQuery();
 
             //Changer les noms
-            queryAddStrawPoll = "INSERT INTO StrawPoll(multipleChoices, strawPollQuestion, NbrVotesStrawPoll,) " +
+            queryAddStrawPoll = "INSERT INTO StrawPoll(MultipleChoices, Question, NbrVotes) " +
                 "VALUES(@multipleChoices, @strawPollQuestion, @NbrVotesStrawPoll); " +
                 "SELECT scope_identity()";
 
             newDataBaseTask.OpenConnection();
 
-            SqlCommand cmd = new SqlCommand(queryAddStrawPoll);
+            SqlCommand cmd = new SqlCommand(queryAddStrawPoll, newDataBaseTask.getSqlConnection());
             cmd.Parameters.AddWithValue("@multipleChoices", newStrawPoll.getMultipleChoices());
             cmd.Parameters.AddWithValue("@strawPollQuestion", newStrawPoll.getStrawPollQuestion());
             cmd.Parameters.AddWithValue("@NbrVotesStrawPoll", newStrawPoll.getNbrVotesStrawPoll());
