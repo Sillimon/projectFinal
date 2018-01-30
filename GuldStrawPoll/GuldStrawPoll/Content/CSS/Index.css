@@ -84,6 +84,12 @@ body {
     width: 200px;
 }
 
+.NbrVote {
+    position: relative;
+    left: 350px;
+    bottom: 100px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

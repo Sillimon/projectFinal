@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8">
     <title>Toto</title>
-    <link rel="stylesheet" type="text/css" href="stylesheetcreatestrawpoll.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/CSS/Index.css" />
 </head>
 <body>
     <div>
@@ -22,13 +22,13 @@
         
         <!-- Middle Text --> 
         <div class="txtMid">
-            <form action="/Home/Vote" method="post">
+            <form action="/Home/VoteRadioButtons?ID=@ViewBag.IDStrawPoll" method="post">
                 <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
 
-                <input type="radio" name="Answer" value="answerOne">@ViewBag.answerOne.getAnswer()<br>
-                <input type="radio" name="Answer" value="answerTwo">@ViewBag.answerTwo.getAnswer()<br>
-                <input type="radio" name="Answer" value="answerThree">@ViewBag.answerThree.getAnswer()<br>
-                <input type="radio" name="Answer" value="answerFour">@ViewBag.answerFour.getAnswer()<br><br>
+                <input type="radio" name="Answer" value="@ViewBag.answerOne.getAnswer()">@ViewBag.answerOne.getAnswer()<br>
+                <input type="radio" name="Answer" value="@ViewBag.answerTwo.getAnswer()">@ViewBag.answerTwo.getAnswer()<br>
+                <input type="radio" name="Answer" value="@ViewBag.answerThree.getAnswer()">@ViewBag.answerThree.getAnswer()<br>
+                <input type="radio" name="Answer" value="@ViewBag.answerFour.getAnswer()">@ViewBag.answerFour.getAnswer()<br><br>
 
                 <input type="submit" name="BtVote" value="Vote !">
             </form>

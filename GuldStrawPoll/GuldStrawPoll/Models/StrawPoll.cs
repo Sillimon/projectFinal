@@ -7,23 +7,29 @@ namespace GuldStrawPoll.Models
 {
     public class StrawPoll
     {
+        //ATTRIBUTES
         private bool multipleChoices;
         private String strawPollQuestion;
         private int nbrVotesStrawPoll;
         private String URLStrawPoll;
         private String URLDeletion;
         private String URLResults;
+        private bool isActive;
+        private Guid GuidStrawPoll = Guid.NewGuid();
 
+        //CONSTRUCTORS
         public StrawPoll(){}
 
-        public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes)
+        public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes, bool newIsActive)
         {
             multipleChoices = newMultipleChoices;
             strawPollQuestion = newStrawPollQuestion;
             nbrVotesStrawPoll = newNbrVotes;
+
+            isActive = newIsActive;
         }
 
-        public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes, String newURLStrawPoll, String newURLDeletion, String newURLResults)
+        public StrawPoll(String newStrawPollQuestion, bool newMultipleChoices, int newNbrVotes, String newURLStrawPoll, String newURLDeletion, String newURLResults, bool newIsActive)
         {
             multipleChoices = newMultipleChoices;
             strawPollQuestion = newStrawPollQuestion;
@@ -31,6 +37,8 @@ namespace GuldStrawPoll.Models
             URLStrawPoll = newURLStrawPoll;
             URLDeletion = newURLDeletion;
             URLResults = newURLResults;
+
+            isActive = newIsActive;
         }
 
         //METHODS//
@@ -39,15 +47,16 @@ namespace GuldStrawPoll.Models
             return "/Home/VotePage?ID=" + ID.ToString();
         }
 
-        public String generateURLDeletion(int ID)
+        public String generateURLDeletion()
         {
-            return "/Home/DeletionPage?ID=" + ID.ToString();
+            return "/Home/DeletionPage?GuidStrawPoll=" + GuidStrawPoll;
         }
 
         public String generateURLResults(int ID)
         {
-            return "/Home/ResultsPage?ID=" + ID.ToString();
+            return "/Home/ResultPage?ID=" + ID.ToString();
         }
+
 
         //GET & SET//
         public bool getMultipleChoices()
@@ -119,6 +128,30 @@ namespace GuldStrawPoll.Models
         public void setURLResults(String newURLResults)
         {
             URLResults = newURLResults;
+        }
+
+
+
+        public bool getIsActive()
+        {
+            return isActive;
+        }
+
+        public void setIsActive(bool stateStrawPoll)
+        {
+            isActive = stateStrawPoll;
+        }
+
+
+
+        public Guid getGuidStrawPoll()
+        {
+            return GuidStrawPoll;
+        }
+
+        public void setGuidStrawPoll(Guid newGuid)
+        {
+            GuidStrawPoll = newGuid;
         }
     }
 }
