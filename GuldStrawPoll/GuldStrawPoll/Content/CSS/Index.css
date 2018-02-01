@@ -133,11 +133,16 @@ li {
         right: 10%;
         font-size: 20px;
         transform: translate(-10%);
-        padding-top: 35px;
+        
     }
 
     li .logo {
+        position: relative;
         width: 40%;
+        padding-top: 25px;
+        right: 60%;
+           
+        
     }
 
 h1 {

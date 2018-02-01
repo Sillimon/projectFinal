@@ -366,6 +366,9 @@ namespace GuldStrawPoll.Controllers
             newDataBaseTask.ExecuteNonQuery();
             newDataBaseTask.CloseConnection();
         }
+
+        //Handle Cookies
+
         
     }
 }
