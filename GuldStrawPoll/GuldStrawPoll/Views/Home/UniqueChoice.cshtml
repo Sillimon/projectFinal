@@ -30,7 +30,8 @@
                 <input type="radio" name="Answer" value="@ViewBag.answerTwo.getAnswer()">@ViewBag.answerTwo.getAnswer()<br>
                 <input type="radio" name="Answer" value="@ViewBag.answerThree.getAnswer()">@ViewBag.answerThree.getAnswer()<br>
                 <input type="radio" name="Answer" value="@ViewBag.answerFour.getAnswer()">@ViewBag.answerFour.getAnswer()<br><br>
-
+                <!--Cookies-->
+                <span style="color:red">@ViewData["UserName"]</span>
                 <input type="submit" name="BtVote" value="Vote !">
             </form>
             <div class="NbrVote">Total votes : @ViewBag.StrawPoll.getNbrVotesStrawPoll()</div>

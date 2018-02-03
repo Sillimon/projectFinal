@@ -368,7 +368,24 @@ namespace GuldStrawPoll.Controllers
         }
 
         //Handle Cookies
+        public void handleCookies()
+        {
+            HttpCookie userInfo = new HttpCookie("userInfo");
+            userInfo["UserName"] = "Guld";
+            userInfo.Expires = DateTime.Now.AddDays(100);
+            Response.Cookies.Add(userInfo);
 
+            //retrieve cookies by cookies name
+            string User_name = string.Empty;
+            HttpCookie reqCookies = Request.Cookies["userInfo"];
+
+            if(reqCookies != null)
+            {
+                User_name = reqCookies["UserName"].ToString();
+            }
+            
+            
+        }
         
     }
 }
