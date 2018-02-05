@@ -62,7 +62,7 @@ body {
 }
 
 #copyright {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     right: 10px;
     font-size: 12px;

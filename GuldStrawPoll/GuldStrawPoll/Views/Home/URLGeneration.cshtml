@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Génération des URLs</title>
     <link rel="stylesheet" type="text/css" href="~/Content/CSS/Index.css" />
 </head>
 <body>
@@ -21,18 +21,19 @@
             <li style="float: right"><a href="#about" class="btnLog">LogIn</a></li>
         </ul>
 
-        <!-- Texte du milieu-->
-        <p> Bienvenue sur le GuldStrawPoll </p>
+        <!-- Middle Text -->
+        <div class="txtMid">
+            
+            <p> Bienvenue sur le GuldStrawPoll </p>
 
-        <a style="float:left" href="@ViewBag.URLStrawPoll">Vote page</a><br /><br />
-        <a style="float:left" href="@ViewBag.URLDeletion">Delete strawpoll</a><br /><br />
-        <a style="float:left" href="@ViewBag.URLResult">Result page</a><br /><br />
+            <a style="float:left" href="@ViewBag.URLStrawPoll">Vote page</a><br /><br />
+            <a style="float:left" href="@ViewBag.URLDeletion">Delete strawpoll</a><br /><br />
+            <a style="float:left" href="@ViewBag.URLResult">Result page</a><br /><br />
 
-        <!--Cookies-->
-        <!-- A chercher comment gérer les cookies-->
-        <!-- Copyright-->
-        <p id="copyright">Copyright 2018. All rights reserved</p>
+        </div>
+            <!-- Copyright-->
+            <p id="copyright">Copyright 2018. All rights reserved</p>
 
-    </div>
+        </div>
 </body>
 </html>
