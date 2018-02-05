@@ -23,7 +23,7 @@
         
         <!-- Middle Text --> 
         <div class="txtMid">
-            <form action="/Home/VoteRadioButtons?ID=@ViewBag.IDStrawPoll" method="post">
+            <form action="/Home/VoteRadioButtons?ID=@ViewBag.IDStrawPoll&answer=Answer" method="post">
                 <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
 
                 <input type="radio" name="Answer" value="@ViewBag.answerOne.getAnswer()">@ViewBag.answerOne.getAnswer()<br>

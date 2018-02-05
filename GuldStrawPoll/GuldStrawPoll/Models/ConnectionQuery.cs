@@ -9,7 +9,7 @@ namespace GuldStrawPoll.Models
 {
     public class ConnectionQuery
     {
-        SqlConnection connection = new SqlConnection("Data Source=POLE414-T;Initial Catalog=StrawPoll;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=172.19.240.123;Initial Catalog=StrawPollLMS;Uid=sa;Pwd=pf68*CCI");
         SqlCommand cmd;
 
         public ConnectionQuery(){}
@@ -39,7 +39,7 @@ namespace GuldStrawPoll.Models
             return dr;
         }
         
-        //GET & SET
+        //Get & Set//
         public void setMySqlCommand(SqlCommand newCommand)
         {
             this.cmd = newCommand;

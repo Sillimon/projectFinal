@@ -140,3 +140,59 @@ C:\Users\Loïc Guld\Documents\ProjetFinal12\projectFinal\GuldStrawPoll\GuldStraw
 C:\Users\Loïc Guld\Documents\ProjetFinal12\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csproj.CoreCompileInputs.cache
 C:\Users\Loïc Guld\Documents\ProjetFinal12\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.dll
 C:\Users\Loïc Guld\Documents\ProjetFinal12\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.pdb
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\GuldStrawPoll.dll.config
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\GuldStrawPoll.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\GuldStrawPoll.pdb
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Helpers.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Mvc.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Razor.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Deployment.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Razor.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Razor.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Deployment.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Razor.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Helpers.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Mvc.xml
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Razor.resources.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Webpages.resources.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Webpages.Deployment.resources.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Webpages.Razor.resources.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csprojResolveAssemblyReference.cache
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csproj.CoreCompileInputs.cache
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.dll
+C:\Users\adai104\Desktop\projectFinal\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.pdb
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\GuldStrawPoll.dll.config
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\GuldStrawPoll.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\GuldStrawPoll.pdb
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Helpers.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Mvc.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Razor.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Deployment.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Razor.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Razor.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Deployment.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Webpages.Razor.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Helpers.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\System.Web.Mvc.xml
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Razor.resources.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Webpages.resources.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Webpages.Deployment.resources.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Webpages.Razor.resources.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csprojResolveAssemblyReference.cache
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.csproj.CoreCompileInputs.cache
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.dll
+C:\Users\adai104\Desktop\projectFinal - Copie\projectFinal\GuldStrawPoll\GuldStrawPoll\obj\Debug\GuldStrawPoll.pdb

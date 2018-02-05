@@ -133,6 +133,7 @@
     <Content Include="Views\Home\MultipleChoices.cshtml" />
     <Content Include="Views\Home\Error_404.cshtml" />
     <Content Include="Views\Home\PieChart.cshtml" />
+    <Content Include="Views\Home\CookieError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

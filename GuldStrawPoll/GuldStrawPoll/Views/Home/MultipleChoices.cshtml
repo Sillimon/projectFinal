@@ -23,13 +23,13 @@
 
         <!-- Middle Text --> 
         <div class="txtMid">
-            <form action="/Home/Vote" method="post">
+            <form action="/Home/VoteCheckBoxes?ID=@ViewBag.IDStrawPoll" method="post">
                 <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
 
-                <input type="checkbox" name="Answer1" value="answerOne">@ViewBag.answerOne.getAnswer()<br>
-                <input type="checkbox" name="Answer2" value="answerTwo">@ViewBag.answerTwo.getAnswer()<br>
-                <input type="checkbox" name="Answer3" value="answerThree">@ViewBag.answerThree.getAnswer()<br>
-                <input type="checkbox" name="Answer4" value="answerFour">@ViewBag.answerFour.getAnswer()<br> <br>
+                <input type="checkbox" name="checkbox" value="@ViewBag.answerOne.getAnswer()" checked>@ViewBag.answerOne.getAnswer()<br>
+                <input type="checkbox" name="checkbox" value="@ViewBag.answerTwo.getAnswer()">@ViewBag.answerTwo.getAnswer()<br>
+                <input type="checkbox" name="checkbox" value="@ViewBag.answerThree.getAnswer()">@ViewBag.answerThree.getAnswer()<br>
+                <input type="checkbox" name="checkbox" value="@ViewBag.answerFour.getAnswer()">@ViewBag.answerFour.getAnswer()<br> <br>
                 <!-- Cookies-->
                 <span style="color:red">@ViewData["UserName"]</span>
                 <input type="submit" name="BtVote" value="Vote !">
