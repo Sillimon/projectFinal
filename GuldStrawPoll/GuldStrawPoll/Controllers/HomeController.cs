@@ -423,7 +423,7 @@ namespace GuldStrawPoll.Controllers
         /// <param name="ID">The ID of the strawpoll</param>
         /// <param name="checkbox">A list of String holding the label of each chosen answer</param>
         /// <returns>View Result.cshtml</returns>
-        public ActionResult VoteCheckBoxes(int ID, List<String> checkBox)
+        public ActionResult VoteCheckBoxes(int ID, List<String> checkbox)
         {
             //Increment database
             String queryIncrementNbrVotes;
@@ -438,7 +438,7 @@ namespace GuldStrawPoll.Controllers
 
             newDataBaseTask.OpenConnection();
             
-            foreach (String answerChosen in checkBox)
+            foreach (String answerChosen in checkbox)
             {
                 SqlCommand newcmd = new SqlCommand(queryIncrementNbrVotes, newDataBaseTask.getSqlConnection());
 

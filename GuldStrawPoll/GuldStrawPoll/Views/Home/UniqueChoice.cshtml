@@ -23,13 +23,13 @@
         
         <!-- Middle Text --> 
         <div class="txtMid">
-            <form action="/Home/VoteRadioButtons" method="post">
+            <form action="~/Home/VoteRadioButtons" method="post">
                 <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
 
-                <input type="radio" name="Answer" value="@ViewBag.answerOne.getAnswer()">@ViewBag.answerOne.getAnswer()<br>
-                <input type="radio" name="Answer" value="@ViewBag.answerTwo.getAnswer()">@ViewBag.answerTwo.getAnswer()<br>
-                <input type="radio" name="Answer" value="@ViewBag.answerThree.getAnswer()">@ViewBag.answerThree.getAnswer()<br>
-                <input type="radio" name="Answer" value="@ViewBag.answerFour.getAnswer()">@ViewBag.answerFour.getAnswer()<br><br>
+                <input type="radio" name="answer" value="@ViewBag.answerOne.getAnswer()">@ViewBag.answerOne.getAnswer()<br>
+                <input type="radio" name="answer" value="@ViewBag.answerTwo.getAnswer()">@ViewBag.answerTwo.getAnswer()<br>
+                <input type="radio" name="answer" value="@ViewBag.answerThree.getAnswer()">@ViewBag.answerThree.getAnswer()<br>
+                <input type="radio" name="answer" value="@ViewBag.answerFour.getAnswer()">@ViewBag.answerFour.getAnswer()<br><br>
                 <!--Cookies-->
                 <span style="color:red">@ViewData["UserName"]</span>
                 <input type="submit" name="BtVote" value="Vote !">
