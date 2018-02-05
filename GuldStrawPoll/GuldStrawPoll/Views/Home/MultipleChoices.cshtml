@@ -23,7 +23,7 @@
 
         <!-- Middle Text --> 
         <div class="txtMid">
-            <form action="/Home/VoteCheckBoxes?ID=@ViewBag.IDStrawPoll" method="post">
+            <form action="~/Home/VoteCheckBoxes" method="post">
                 <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
 
                 <input type="checkbox" name="checkbox" value="@ViewBag.answerOne.getAnswer()" checked>@ViewBag.answerOne.getAnswer()<br>
@@ -33,7 +33,7 @@
                 <!-- Cookies-->
                 <span style="color:red">@ViewData["UserName"]</span>
                 <input type="submit" name="BtVote" value="Vote !">
-
+                <input type="hidden" id="IDStrawPoll" name="ID" value="@ViewBag.IDStrawPoll">
             </form>
             <div class="NbrVote">Total votes : @ViewBag.StrawPoll.getNbrVotesStrawPoll()</div>
         </div>

@@ -23,7 +23,7 @@
         
         <!-- Middle Text --> 
         <div class="txtMid">
-            <form action="/Home/VoteRadioButtons?ID=@ViewBag.IDStrawPoll&answer=Answer" method="post">
+            <form action="/Home/VoteRadioButtons" method="post">
                 <p>@ViewBag.StrawPoll.getStrawPollQuestion()</p>
 
                 <input type="radio" name="Answer" value="@ViewBag.answerOne.getAnswer()">@ViewBag.answerOne.getAnswer()<br>
@@ -33,6 +33,7 @@
                 <!--Cookies-->
                 <span style="color:red">@ViewData["UserName"]</span>
                 <input type="submit" name="BtVote" value="Vote !">
+                <input type="hidden" id="IDStrawPoll" name="ID" value="@ViewBag.IDStrawPoll">
             </form>
             <div class="NbrVote">Total votes : @ViewBag.StrawPoll.getNbrVotesStrawPoll()</div>
         </div>

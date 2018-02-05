@@ -16,7 +16,6 @@ namespace GuldStrawPoll.Controllers
         /// <returns>View Index.cshtml</returns>
         public ActionResult Index()
         {
-            ViewBag.Nom = "Mon p'tit Guld !";
             return View("Index");
         }
 
@@ -25,7 +24,7 @@ namespace GuldStrawPoll.Controllers
         /// Display the creation page
         /// </summary>
         /// <returns>View CreateStrawPoll.cshtml</returns>
-        public ActionResult displayCreatePage()
+        public ActionResult DisplayCreatePage()
         {
             return View("CreateStrawPoll");
         }
@@ -384,7 +383,6 @@ namespace GuldStrawPoll.Controllers
 
             while (newReaderAnswer.HasRows)
             {
-
                 while (newReaderAnswer.Read())
                 {
                     Models.Answer newAnswer = new Models.Answer((String)newReaderAnswer["Answer"], (int)newReaderAnswer["NbrVotes"]);
